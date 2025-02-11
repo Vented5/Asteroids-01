@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3xuxkwmvy1lv"]
+
+[ext_resource type="Script" path="res://ship_1.gd" id="1_bmhhx"]
+[ext_resource type="Texture2D" uid="uid://dqyglp4e3y5ni" path="res://Sprite-0001-128x128.png" id="1_qb6rv"]
+
+[node name="Ship-01" type="Area2D"]
+position = Vector2(368, 220)
+script = ExtResource("1_bmhhx")
+speed = 1000
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qb6rv")
