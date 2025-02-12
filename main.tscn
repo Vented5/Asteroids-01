@@ -1,9 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://jdd2ks4s4mvc"]
+[gd_scene load_steps=5 format=3 uid="uid://jdd2ks4s4mvc"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_vrjpv"]
 [ext_resource type="PackedScene" uid="uid://b3xuxkwmvy1lv" path="res://Ship1.tscn" id="2_nx463"]
+[ext_resource type="PackedScene" uid="uid://q0aph6c45d6y" path="res://asteroid.tscn" id="2_tbfen"]
+
+[sub_resource type="Curve2D" id="Curve2D_t005i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1152, 0, 0, 0, 0, 0, 1152, 648, 0, 0, 0, 0, 0, 648, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vrjpv")
+asteroid_scene = ExtResource("2_tbfen")
 
 [node name="Ship-01" parent="." instance=ExtResource("2_nx463")]
+
+[node name="AsteroidPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_t005i")
+
+[node name="AsteroidPathLocation" type="PathFollow2D" parent="AsteroidPath"]
+
+[node name="AsteroidTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="AsteroidTimer" to="." method="_on_asteroid_timer_timeout"]

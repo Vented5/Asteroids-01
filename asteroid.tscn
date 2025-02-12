@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://q0aph6c45d6y"]
+
+[ext_resource type="Texture2D" uid="uid://de63f51jxs7ba" path="res://Asteroid-S-4x.png" id="1_e4ue5"]
+
+[node name="Asteroid" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e4ue5")
