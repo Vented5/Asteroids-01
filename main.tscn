@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://jdd2ks4s4mvc"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_vrjpv"]
+[ext_resource type="PackedScene" uid="uid://b3xuxkwmvy1lv" path="res://Ship1.tscn" id="2_nx463"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_vrjpv")
+
+[node name="Ship-01" parent="." instance=ExtResource("2_nx463")]

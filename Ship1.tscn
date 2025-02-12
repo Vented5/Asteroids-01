@@ -1,13 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3xuxkwmvy1lv"]
+[gd_scene load_steps=6 format=3 uid="uid://b3xuxkwmvy1lv"]
 
 [ext_resource type="Script" path="res://ship_1.gd" id="1_bmhhx"]
-[ext_resource type="Texture2D" uid="uid://dqyglp4e3y5ni" path="res://Sprite-0001-128x128.png" id="1_qb6rv"]
+[ext_resource type="PackedScene" uid="uid://eqwoefrttfba" path="res://bullet.tscn" id="2_mnkgy"]
+[ext_resource type="Texture2D" uid="uid://dmkgcdmbxbc72" path="res://Sprite-0001-128x128-advancing1.png" id="2_xib2s"]
+[ext_resource type="Texture2D" uid="uid://dbvx2p7tahtkp" path="res://Sprite-0001-128x128-advancing2.png" id="3_4025g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_se22p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xib2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4025g")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="Ship-01" type="Area2D"]
-position = Vector2(368, 220)
+position = Vector2(414, 268)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_bmhhx")
-speed = 1000
+rotation_speed = 0.05
+bullet_scene = ExtResource("2_mnkgy")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qb6rv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_se22p")
+animation = &"Idle"
+frame = 1
+frame_progress = 0.250835
+
+[node name="Cannon1" type="Marker2D" parent="."]
+position = Vector2(44, -36)
+rotation = 4.71239
+
+[node name="Cannon2" type="Marker2D" parent="."]
+position = Vector2(-44, -36)
+rotation = 4.71239
+
+[node name="Fire_rate" type="Timer" parent="."]
+wait_time = 0.15
+
+[connection signal="timeout" from="Fire_rate" to="." method="_on_fire_rate_timeout"]
