@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://ship_1.gd" id="1_bmhhx"]
 [ext_resource type="PackedScene" uid="uid://eqwoefrttfba" path="res://bullet.tscn" id="2_mnkgy"]
-[ext_resource type="Texture2D" uid="uid://dmkgcdmbxbc72" path="res://Sprite-0001-128x128-advancing1.png" id="2_xib2s"]
-[ext_resource type="Texture2D" uid="uid://dbvx2p7tahtkp" path="res://Sprite-0001-128x128-advancing2.png" id="3_4025g"]
+[ext_resource type="Texture2D" uid="uid://dmkgcdmbxbc72" path="res://sprites/Sprite-0001-128x128-advancing1.png" id="2_xib2s"]
+[ext_resource type="Texture2D" uid="uid://dbvx2p7tahtkp" path="res://sprites/Sprite-0001-128x128-advancing2.png" id="3_4025g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_se22p"]
 animations = [{

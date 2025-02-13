@@ -1,6 +1,10 @@
 extends Node
 
-@export var asteroid_scene: PackedScene
+
+@export var asteroid_s_scene: PackedScene
+@export var asteroid_m_scene: PackedScene
+@export var asteroid_l_scene: PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,13 +14,19 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-	
-	
 
 
 func _on_asteroid_timer_timeout():
-	var asteroid = asteroid_scene.instantiate() # Instantiate the scene
+	var random = randi_range(1, 3)
+	var asteroid
+	
+	if random == 1:
+		asteroid = asteroid_s_scene.instantiate() # Instantiate the scene
+	elif random == 2:
+		asteroid = asteroid_m_scene.instantiate() # Instantiate the scene
+	elif random == 3:
+		asteroid = asteroid_l_scene.instantiate() # Instantiate the scene
+	
 	
 	# Picks a random location along the asteroid path
 	var asteroid_spawn_location = $AsteroidPath/AsteroidPathLocation

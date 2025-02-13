@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgajxuro5xwny"]
+
+[ext_resource type="Texture2D" uid="uid://de63f51jxs7ba" path="res://sprites/Asteroid-S-4x.png" id="1_5gcmr"]
+[ext_resource type="Script" path="res://asteroid_s.gd" id="1_tee3u"]
+
+[node name="AsteroidS" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_tee3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5gcmr")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

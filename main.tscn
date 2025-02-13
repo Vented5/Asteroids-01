@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://jdd2ks4s4mvc"]
+[gd_scene load_steps=7 format=3 uid="uid://jdd2ks4s4mvc"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_vrjpv"]
 [ext_resource type="PackedScene" uid="uid://b3xuxkwmvy1lv" path="res://Ship1.tscn" id="2_nx463"]
-[ext_resource type="PackedScene" uid="uid://q0aph6c45d6y" path="res://asteroid.tscn" id="2_tbfen"]
+[ext_resource type="PackedScene" uid="uid://bgajxuro5xwny" path="res://asteroid_s.tscn" id="2_rofkw"]
+[ext_resource type="PackedScene" uid="uid://c477iqfegc72m" path="res://asteroid_m.tscn" id="2_rysl6"]
+[ext_resource type="PackedScene" uid="uid://q0aph6c45d6y" path="res://asteroid_l.tscn" id="4_ct4qc"]
 
 [sub_resource type="Curve2D" id="Curve2D_t005i"]
 _data = {
@@ -12,7 +14,9 @@ point_count = 5
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vrjpv")
-asteroid_scene = ExtResource("2_tbfen")
+asteroid_s_scene = ExtResource("2_rofkw")
+asteroid_m_scene = ExtResource("2_rysl6")
+asteroid_l_scene = ExtResource("4_ct4qc")
 
 [node name="Ship-01" parent="." instance=ExtResource("2_nx463")]
 

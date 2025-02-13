@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://eqwoefrttfba"]
+[gd_scene load_steps=4 format=3 uid="uid://eqwoefrttfba"]
 
-[ext_resource type="Texture2D" uid="uid://srs2uup1v6qu" path="res://Bullet-32x8.png" id="1_u8p5e"]
+[ext_resource type="Texture2D" uid="uid://srs2uup1v6qu" path="res://sprites/Bullet-32x8.png" id="1_u8p5e"]
 [ext_resource type="Script" path="res://bullet.gd" id="1_yix1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_js0oq"]
+size = Vector2(32, 8)
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource("1_yix1s")
@@ -13,5 +16,8 @@ rotation = 1.5708
 texture = ExtResource("1_u8p5e")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_js0oq")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
